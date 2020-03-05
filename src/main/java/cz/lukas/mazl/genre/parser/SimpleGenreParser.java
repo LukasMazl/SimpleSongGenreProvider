@@ -15,6 +15,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class SimpleGenreParser implements GenreParser {
+
     @Override
     public Track parser(String content) {
         Track track = new Track();
@@ -31,7 +32,7 @@ public class SimpleGenreParser implements GenreParser {
 
             boolean songNotFound = songNotFoundInDoc(xpath, doc);
             if(songNotFound) {
-                return track;
+                return null;
             }
 
             readAllValuesForTrack(track, xpath, doc);

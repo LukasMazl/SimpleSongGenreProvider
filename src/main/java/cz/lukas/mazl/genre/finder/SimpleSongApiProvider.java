@@ -25,7 +25,7 @@ public class SimpleSongApiProvider implements SongApiProvider {
             throw new SongDoesNotExistException();
         } else {
              track = getParser().parser(urlContent);
-            if (track.getArtist() == null) {
+            if (track == null) {
                 throw new SongDoesNotExistException();
             }
         }
